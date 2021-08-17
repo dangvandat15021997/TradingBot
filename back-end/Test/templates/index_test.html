@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{test}}</h1>
+    
+    <form method="get" action ="#">
+        <select name="filter" onchange="this.form.submit()">
+            <option selected = 'selected' hidden = 'hidden'> chose hear</option>
+            <option {% if request.query_params['filter'] == 1 %} selected = 'selected'{% endif %} >1</option>
+            <option {% if request.query_params['filter'] == 2 %} selected = 'selected'{% endif %} >2</option>
+        </select>
+
+    </form>
+    
+</body>
+</html>

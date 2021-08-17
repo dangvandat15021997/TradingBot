@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./back-end/backtrader",
+        "./back-end/signals/backtrader_signal"
+    ]
+}

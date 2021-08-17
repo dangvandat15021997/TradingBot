@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+    <h1>Order History</h1>
+    
+    <p>Balance:10000  PNL: 50%</p>
+    <form method="get" action = "/" >
+        <select name ="strategy_filter"  > 
+            <option value="">EMA_Strategy 1</option>
+            <option value="">EMA_Strategy 2</option>
+            <option value="">EMA_Strategy 3</option>
+        </select>
+        <input type="submit" name = "Find" value="Find">
+    </form>
+
+    <!-- Not working -->
+        <!-- <div class="ui calendar" id="example1">
+            <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date/Time">
+            </div>
+          
+        </div>     -->
+
+    
+    <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>2020-15-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>65000</th>
+                <th>2</th>
+                <th>accepted</th>
+            </tr>
+            <tr>
+                <th>2020-16-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>55000</th>
+                <th>2</th>
+                <th>cancelled</th>
+            </tr>
+            <tr>
+                <th>2020-17-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>43000</th>
+                <th>1.32</th>
+                <th>accepted</th>
+            </tr>
+            <tr>
+                <th>2020-18-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>65000</th>
+                <th>2.14</th>
+                <th>summited</th>
+            </tr>
+
+        </tbody>
+      </table>
+    
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content%}
+<h1 class = 'ui header'>{{symbol}}</h1>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div id="tradingview_05e4d"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+    new TradingView.widget(
+    {
+      "width": 980,
+      "height": 610,
+      "symbol": "NASDAQ:{{symbol}}",
+      "interval": "D",
+      "timezone": "Etc/UTC",
+      "theme": "light",
+      "style": "1",
+      "locale": "vi_VN",
+      "toolbar_bg": "#f1f3f6",
+      "enable_publishing": false,
+      "allow_symbol_change": true,
+      "container_id": "tradingview_05e4d"
+  
+    
+  }
+    );
+    </script> 
+  </div>
+  <!-- TradingView Widget END -->
+
+<!-- <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Open time</th>
+        <th>Open</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Close</th>
+        <th>Volume</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in rows%}
+        <tr>
+            <th>{{row['open_time']}}</th>
+            <th>{{row['open']}}</th>
+            <th>{{row['high']}}</th>
+            <th>{{row['low']}}</th>
+            <th>{{row['close']}}</th>
+            <th>{{row['volume']}}</th>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table> -->
+{% endblock %}

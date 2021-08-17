@@ -1,0 +1,32 @@
+new TradingView.widget({
+    "container_id": "box" + i,
+    "autosize": true,
+    "symbol": chartTicker,
+    "interval": intervalValue,
+    "timezone": timezoneValue,
+    "theme": theme,
+    "style": "1",
+    "locale": "en",
+    "toolbar_bg": toolbarbg,
+    "enable_publishing": false,
+    // "hide_legend": true,
+    "hide_top_toolbar": false,
+    "hide_side_toolbar": false,
+    "save_image": false,
+    "allow_symbol_change": allowsymbolchange,
+    "show_popup_button": false,
+    "withdateranges": withdateranges,
+    "details": details,
+    "hideideas": true,
+    "disabled_features": ["use_localstorage_for_settings", create_volume_indicator_by_default"],
+    "enabled_features": ["move_logo_to_main_pane", "hide_left_toolbar_by_default"],
+    // "disabledDrawings": true,
+    "studies_overrides": {
+        "rsi.rsi.plot.color": "#2196f3",
+        "rsi.level.0": 20,
+        "rsi.level.1": 80
+    },
+    "studies": [
+        "RSI@tv-basicstudies"
+    ],
+});

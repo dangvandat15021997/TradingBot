@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+
+{% block content%}
+
+    <div class = 'ui container'>
+        <h1 class = 'ui header'>Coin List</h1>      
+        
+        <form method="get" action = "/" >
+          <select name ="signal_filter" onchange="this.form.submit()" > 
+            <option value="All">All Coin</option>
+            {% for signal in signal_list %}
+            <option {% if request.query_params['signal_filter'] == signal %} selected = "selected" {% endif %}>  {{signal}} </option>
+            {% endfor %}
+          </select>
+        </form>
+        
+        <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Inteval</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for row in symbols %}
+                <tr>
+                    <th>{{row['symbol']}}</th>
+                    <th><a href="/coin/?symbol={{row['symbol']}}">Detail</a></th>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </div>
+{% endblock %}

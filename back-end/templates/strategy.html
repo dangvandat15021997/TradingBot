@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+    <h1>Strategy</h1>
+    <p>Balance:10000  PNL: 50%</p>
+    <form method="get" action = "/" >
+        <select name ="strategy_filter"  > 
+            <option value="">EMA_Strategy 1</option>
+            <option value="">EMA_Strategy 2</option>
+            <option value="">EMA_Strategy 3</option>
+        </select>
+        <select name ="Symbol"  > 
+            <option value="">BTCUSDT</option>
+            <option value="">ADAUSDT</option>
+            <option value="">XLMUSTD</option>
+        </select>
+        <input type="text" name = "Find" value="starttime">
+        <input type="text" name = "Find" value="endtime">
+        <input type="submit" name = "Find" value= "Apply">
+    </form>
+    <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>2020-15-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>65000</th>
+                <th>2</th>
+                <th>accepted</th>
+                <th>9500</th>
+            </tr>
+            <tr>
+                <th>2020-16-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>55000</th>
+                <th>2</th>
+                <th>cancelled</th>
+                <th>15000</th>
+            </tr>
+            <tr>
+                <th>2020-17-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>43000</th>
+                <th>1.32</th>
+                <th>accepted</th>
+                <th>12000</th>
+            </tr>
+            <tr>
+                <th>2020-18-02</th>
+                <th>buy</th>
+                <th>BTC</th>
+                <th>65000</th>
+                <th>2.14</th>
+                <th>summited</th>
+                <th>15000</th>
+            </tr>
+
+        </tbody>
+      </table>
+{% endblock %}

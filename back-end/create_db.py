@@ -57,48 +57,48 @@ def create_db():
         UNIQUE(name)    
     );""")
 
-    cursor.execute("""CREATE TABLE IF NOT EXISTS strategy_signal( 
-        id_strategy INTEGER NOT NULL,
-        id_signal INTEGER NOT NULL,
-        PRIMARY KEY(id_signal,id_indicator),
-        FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE,
-        FOREIGN KEY (id_strategy_signal) REFERENCES signal(id) ON DELETE CASCADE
-    );""")
+    # cursor.execute("""CREATE TABLE IF NOT EXISTS strategy_signal( 
+    #     id_strategy INTEGER NOT NULL,
+    #     id_signal INTEGER NOT NULL,
+    #     PRIMARY KEY(id_signal,id_indicator),
+    #     FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE,
+    #     FOREIGN KEY (id_strategy_signal) REFERENCES signal(id) ON DELETE CASCADE
+    # );""")
 
-    cursor.execute("""CREATE TABLE IF NOT EXISTS coin_strategy (   
-        id_coin_pair INTEGER NOT NULL,
-        id_strategy INTEGER NOT NULL,
-        PRIMARY KEY(id_symbol , id_strategy),
-        FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE,
-        FOREIGN KEY (id_coin_pair) REFERENCES coin_pair(id) ON DELETE CASCADE
-    );""")
+    # cursor.execute("""CREATE TABLE IF NOT EXISTS coin_strategy (   
+    #     id_coin_pair INTEGER NOT NULL,
+    #     id_strategy INTEGER NOT NULL,
+    #     PRIMARY KEY(id_symbol , id_strategy),
+    #     FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE,
+    #     FOREIGN KEY (id_coin_pair) REFERENCES coin_pair(id) ON DELETE CASCADE
+    # );""")
 
-    cursor.execute("""CREATE TABLE IF NOT EXISTS order(   
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        id_strategy INTEGER NOT NULL,
-        time TIMESTAMP NOT NULL,
-        symbol TEXT NOT NULL,
-        price NOT NULL,
-        amount NOT NULL,
-        type TEXT NOT NULL, 
-        status TEXT NOT NULL, 
-        FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE
-    );""")
+    # cursor.execute("""CREATE TABLE IF NOT EXISTS order(   
+    #     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    #     id_strategy INTEGER NOT NULL,
+    #     time TIMESTAMP NOT NULL,
+    #     symbol TEXT NOT NULL,
+    #     price NOT NULL,
+    #     amount NOT NULL,
+    #     type TEXT NOT NULL, 
+    #     status TEXT NOT NULL, 
+    #     FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE
+    # );""")
 
-    cursor.execute("""CREATE TABLE IF NOT EXISTS wallet(   
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        id_strategy INTEGER NOT NULL,
-        balance NOT NULL, 
-        FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE
-    );""")
+    # cursor.execute("""CREATE TABLE IF NOT EXISTS wallet(   
+    #     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    #     id_strategy INTEGER NOT NULL,
+    #     balance NOT NULL, 
+    #     FOREIGN KEY (id_strategy) REFERENCES strategy(id) ON DELETE CASCADE
+    # );""")
 
-    cursor.execute("""CREATE TABLE IF NOT EXISTS wallet_coin(   
-        id_wallet INTEGER NOT NULL,
-        coin_name TEXT,
-        amount NOT NULL, 
-        PRIMARY KEY(id_wallet,coin_name),
-        FOREIGN KEY (id_wallet) REFERENCES wallet(id) ON DELETE CASCADE
-    );""")
+    # cursor.execute("""CREATE TABLE IF NOT EXISTS wallet_coin(   
+    #     id_wallet INTEGER NOT NULL,
+    #     coin_name TEXT,
+    #     amount NOT NULL, 
+    #     PRIMARY KEY(id_wallet,coin_name),
+    #     FOREIGN KEY (id_wallet) REFERENCES wallet(id) ON DELETE CASCADE
+    # );""")
 
 
 

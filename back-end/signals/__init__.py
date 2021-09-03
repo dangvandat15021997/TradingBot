@@ -1,5 +1,5 @@
-
-from .EMA_200_signal import EMA_200_signal
+from __future__ import absolute_import
+from .EMA_200_signal_module import EMA_200_signal
 
 
 # Signal 

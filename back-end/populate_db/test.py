@@ -1,1 +1,0 @@
-from update_coin_price import update_coin_price
